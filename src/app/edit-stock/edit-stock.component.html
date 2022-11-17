@@ -1,0 +1,129 @@
+<body>
+    <div class="alert alert-success" *ngIf='message'>
+        {{message}}
+    </div>
+    <div class="alert alert-danger" *ngIf='error'>
+        {{error}}
+    </div>
+
+    <div class="col-md-4 offset-4 mt-2">
+        <form #stockBeanForm='ngForm' (ngSubmit)='updateStocks(stockBeanForm)' class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Update Stocks Details</h4>
+                </div>
+                <div class="form-group">
+                    <label for="stockID">stockID: {{stockID1}}</label>
+                    <input type="hidden" name="stockID" id="stockID" 
+                    class="form-control" #stockID='ngModel' [(ngModel)]='stockID1' ngModel>
+                </div>
+               
+            <div class="form-group">
+                <label for="companyName">CompanyName</label>
+                <input type="text" name="companyName" id="companyName" class="form-control" #companyName='ngModel' [(ngModel)]='companyName1'
+                    placeholder="Enter your companyName" pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" minlength="2" maxlength="50"
+                    required>
+                <div class="text-danger" *ngIf='(companyName.touched || companyName.dirty) && companyName.invalid'>
+                    <div class="alert alert-danger" *ngIf='companyName.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='companyName.errors.pattern'>
+                        *Can contain only alphabets seperated by space with minimum length 2
+                    </div>
+                    <div class="alert alert-danger" *ngIf='companyName.errors.minlength'>
+                        *Can contain only alphabets seperated by space with minimum length 2
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="companyID">companyID</label>
+                <input type="text" name="companyID" id="companyID" required class="form-control" #companyID='ngModel' [(ngModel)]='companyID1'
+                    placeholder="Enter your companyID" pattern="[0-9]+" minlength="2" maxlength="50">
+                <div class="text-danger" *ngIf='companyID.touched && companyDirector.invalid'>
+                    <div class="alert alert-danger" *ngIf='companyID.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='companyID.errors.pattern'>
+                        *This field accepts only numbers
+                    </div>
+                    <div class="alert alert-danger" *ngIf='companyID.errors.minlength'>
+                        *This field accepts only numbers with length 2-50
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="currentPrice">currentPrice</label>
+                <input type="text" name="currentPrice" id="currentPrice" class="form-control" placeholder="Enter your currentPrice"
+                    #currentPrice='ngModel' [(ngModel)]='currentPrice1' pattern="[0-9]+" required>
+                <div class="text-danger" *ngIf='currentPrice.touched && currentPrice.invalid'>
+                    <div class="alert alert-danger" *ngIf='currentPrice.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='currentPrice.errors.pattern'>
+                        *This field accepts only numbers with length 2-50
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastPrice">lastPrice</label>
+                <input type="text" name="lastPrice" id="lastPrice" class="form-control" #lastPrice='ngModel' [(ngModel)]='lastPrice1'
+                pattern="[0-9]+" placeholder="Enter your lastPrice" required>
+                <div class="text-danger" *ngIf='lastPrice.touched && lastPrice.invalid'>
+                    <div class="alert alert-danger" *ngIf='lastPrice.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='lastPrice.errors.pattern'>
+                        *This field accepts only numbers 
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="changePercentage">changePercentage % </label>
+                <input type="text" name="changePercentage" id="changePercentage" class="form-control" #changePercentage='ngModel' [(ngModel)]='changePercentage1'
+                    placeholder="Enter your changePercentage"  pattern="[0-9]+([\.][0-9]{0,2})?"  required >
+                <div class="text-danger" *ngIf='changePercentage.touched && changePercentage.invalid'>
+                    <div class="alert alert-danger" *ngIf='changePercentage.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='changePercentage.errors.pattern'>
+                        *It must be number, Can allow up to 2 decimal point, Only one dot is allowed (e.g.: 100.24).
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="availableStocks">availableStocks</label>
+                <input type="number" name="availableStocks" id="availableStocks" class="form-control" #availableStocks='ngModel' [(ngModel)]='availableStocks1'
+                pattern="[0-9]+" placeholder="Enter your availableStocks" required>
+                <div class="text-danger" *ngIf='availableStocks.touched && availableStocks.invalid'>
+                    <div class="alert alert-danger" *ngIf='availableStocks.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='availableStocks.errors.pattern'>
+                        *This field accepts only numbers
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="totalStocks">totalStocks</label>
+                <input type="number" name="totalStocks" id="totalStocks" class="form-control" #totalStocks='ngModel' [(ngModel)]='totalStocks1'
+                pattern="[0-9]+" placeholder="Enter your totalStock" required>
+                <div class="text-danger" *ngIf='totalStocks.touched && totalStocks.invalid'>
+                    <div class="alert alert-danger" *ngIf='totalStocks.errors.required'>
+                        *This Field Is invalid
+                    </div>
+                    <div class="alert alert-danger" *ngIf='totalStocks.errors.pattern'>
+                        *This field accepts only numbers
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer float-right">
+                <button type="submit" class="btn btn-outline-success" [disabled]="stockBeanForm.form.invalid">Update Stocks</button>
+            </div>
+            </div>
+            <br>
+        </form>
+    </div>
+</body>
+
+

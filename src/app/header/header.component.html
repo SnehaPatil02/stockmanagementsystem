@@ -1,0 +1,48 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+<!-- <img src="assets/stock.png" height="670px" width="350px"  alt=""> -->
+<section style=" background: orange; color: rgba(33, 71, 221, 0.5); 
+ height: 150px; width:100%; background-repeat: no-repeat; padding: 4px;">
+  <img src="https://www.marwadionline.com/assets/images/bull.png"
+    style="float: left; border-radius: 100%;border: 5px solid black; padding-left: 5px;
+     height: 100px; width: 120px; padding-top: 6px; padding-right: 3px;" alt="">
+  <img src="https://www.usagold.com/cpmforum/wp-content/uploads/bearwarning-1.png"
+    style="float: right; border-radius: 125%; padding-top: 5px; padding-right: 5px; height: 120px; width: 120px;"
+    alt="">
+    <h3 style="margin-left: 20em;">Captain Stocks Management</h3>
+  <!-- <h2 style="margin-bottom: 0em;"><strong style="font-size: 55px;  padding: 5px;"> Stock Management System</strong></h2> -->
+ <div style="margin-bottom: 20px;height: 25px;"> 
+    <nav class="fill " style="height: 25px; margin-top: 0em;align-content: space-between;">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a type="button"  (click)='selectedAbout()'>About Us</a></li>
+      <li><a type="button" routerLink="/contact-us">Contact Us</a></li>
+      <li class="dropdown" style=" height: 2px; width: 2px;">
+       
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          User
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="admin-login" >Admin</a>
+          <a class="dropdown-item" routerLink="manager-login"> Manager</a>
+          <a class="dropdown-item" routerLink="investor-login">Investor</a>
+        </div>
+       
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <li><a type="button" routerLink="/admin-home" *ngIf='isAdmin()'>admin</a></li>
+       <li><a type="button" routerLink="/manager-home" *ngIf='isManager()'>Manager</a></li>
+      <!-- <li><a type="button" routerLink="/admin-home" *ngIf='isInvestor()'>Investor</a></li> -->
+      <li><a type="button" routerLink="/home" (click)='logout()'>Logout</a></li>
+
+    </ul>
+    <!-- <form class="form-inline">
+      <button class="btn btn-outline-dark float-right"  id="button3" style="color: rgb(26, 4, 4);"
+        routerLink="/login"><strong>Logout</strong></button>
+    </form> -->
+  </nav>
+  
+</div>
+
+  
+  
+</section>

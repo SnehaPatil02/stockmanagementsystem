@@ -1,0 +1,74 @@
+
+<div class="col-md-4 offset-4 mt-3 mb-3">
+    <input type="search" name="search" class="form-control" 
+        placeholder="Enter companyName  to search...">
+</div>
+<div class="col-md-3 float-left mt-3" *ngFor='let stock of stocks '>
+    <div class="card">
+        <div class="card-header bg-muted">
+            <h5>companyName : {{stock.companyName}}</h5>
+        </div>
+       
+        <div class="card-body center">
+            <div class="card-header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ__2u__6Baj-8HvMQCDDrcfkZmo0iiC93GYoqtnlrKaPLcdPOC" alt="" style="align-content: center;"
+                height="100%" width="100%">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <p>Stock ID : {{stock.stockID}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>CompanyName : {{stock.companyName}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Company ID : {{stock.companyID}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Current Price : {{stock.currentPrice}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Last Price : {{stock.lastPrice}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Change Percentage : {{stock.changePercentage}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Available Stocks : {{stock.availableStocks}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Total Stocks : {{stock.totalStocks}}</p>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group col-md-12">
+                <button class="btn btn-outline-success" (click)='updateStocks(stock)'>
+                    Update
+                </button>
+                <button class="btn btn-outline-success" (click)='deleteStocks(stock)'>
+                    Delete
+                </button>
+            </div>
+        </div>
+  
+    </div>
+</div>

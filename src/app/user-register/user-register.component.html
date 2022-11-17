@@ -1,0 +1,79 @@
+<!-- <body>
+    <div class="jumbotron"> -->
+
+        <div id="registerPage">
+            <div class="alert alert-success" *ngIf="message">
+                {{message}}
+            </div>
+            <div class="alert alert-danger" *ngIf="error">
+                {{error}}
+            </div>
+            <div class="col-md-8 mx-auto " style="padding: 2px; margin-top: 5px;">
+                <div class="container " style="margin-top: 5px;">
+                    <div class="formContainer" style="padding:10px; padding-top: 6px; margin-top: 5px;">
+                        
+                        <form #registerForm='ngForm' (ngSubmit)='addManager(registerForm)'> 
+                          <div class="card-header text-center offset-4">
+                             <h3>REGISTER</h3> 
+                          </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                               
+                                <input type="userEmail" name="userEmail" id="userEmail"
+                                    pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" class="form-control" #userEmail='ngModel' ngModel required  placeholder="enter your email">
+                                <div class="text-danger" *ngIf='userEmail.touched && userEmail.invalid'>
+                                    <div *ngIf='userEmail.errors.required'>*This field is mandatory</div>
+                                    <div *ngIf='userEmail.errors.pattern'>*Ex:(abc@gmail.com)</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userName">User name</label>
+                                <input type="userName" class="form-control"  #userName='ngModel' ngModel name="userName" id="userName"
+                                    placeholder="Enter your userName" required username minlength="5">
+                                <div *ngIf='userName.touched && userName.invalid'>
+                                    <small class="alert alert-danger position-absolute" *ngIf='userName.errors.required'>This
+                                        field
+                                        is mandatory</small>
+                                    <small class="alert alert-danger position-absolute"
+                                        *ngIf='userName.errors.minlength'>Minimum 5
+                                        characters are required
+                                    </small>
+                                    <small class="alert alert-danger position-absolute" *ngIf='userName.errors.username'>Enter
+                                        character Only</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userType">UserType</label>
+                               
+                                <input type="userType" name="userType" id="userType"
+                                    pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" class="form-control" #userType='ngModel' ngModel required  placeholder="enter your email">
+                                <div class="text-danger" *ngIf='userType.touched && userType.invalid'>
+                                    <div *ngIf='userType.errors.required'>*This field is mandatory</div>
+            
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control"  #password='ngModel' ngModel name="password" id="password" 
+                                   placeholder="Enter your password..." required
+                                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,14}$">
+                                <div *ngIf='password.invalid && password.touched'>
+                                    <small class="alert alert-danger" *ngIf='password.errors.required'>This
+                                        field
+                                        is mandatory</small>
+                                    <small class="alert alert-danger" *ngIf='password.errors.pattern'>8 to 14
+                                        characters, should include
+                                        one uppercase,one lowercase,one digit and one special character.
+                                    </small>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary float-right w-100">SUBMIT</button>
+                        </form>
+                    </div>
+        
+                </div>
+        
+            </div>
+        </div>
+        <!-- </div>
+        </body> -->

@@ -1,0 +1,65 @@
+
+<div class="col-md-4 offset-4 mt-3 mb-3">
+    <input type="search" name="search" class="form-control" 
+        placeholder="Enter ManagerName  to search...">
+</div>
+<div class="col-md-3 float-left mt-3" *ngFor='let manager of managers '>
+    <div class="card">
+        <div class="card-header bg-muted">
+            <h5>ManagerName : {{manager.managerName}}</h5>
+        </div>
+       
+        <div class="card-body center">
+            <div class="card-header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxZrxEulN1GnHMMuG8BIxUC_k-bIGLUIcW9BMyAg9ell3KrbwO" alt="" style="align-content: center;"
+                height="100%" width="100%">
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <p>Manager Name : {{manager.managerName}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Manager Company : {{manager.managerCompany}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Manager Phone : {{manager.managerPhone}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Manager Email : {{manager.managerEmail}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Manager City : {{manager.managerCity}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Manager Postal : {{manager.managerPostal}}</p>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group col-md-12">
+                <button class="btn btn-outline-success" (click)='updateManager(manager)'>
+                    Update
+                </button>
+                <button class="btn btn-outline-success" (click)='deleteManager(manager)'>
+                    Delete
+                </button>
+            </div>
+        </div>
+  
+    </div>
+</div>
+

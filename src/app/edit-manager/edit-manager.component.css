@@ -1,0 +1,35 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .jumbotron {
+    background-image: url(https://mcdn.wallpapersafari.com/medium/67/30/iYMUKA.jpg);
+    height: 1000px;
+    background-size: cover;
+    object-fit: cover;
+    }
+    .card{
+      height: 750px;
+      margin-top: 0em;
+      margin-bottom: 50px;
+      padding-top: 0em;
+      width: 450px;
+      background-color: rgba(0,0,0,0.5) !important;
+     
+      }
+      .container{
+        margin-top: 0em;
+        height: 100%;
+        padding-top: 0em;
+        align-content: center;
+      }
+        .card-header h3{
+          color: rgba(248, 245, 245, 0.89);
+          text-align: center;
+        font-family: 'Numans', sans-serif;
+          }
+          
+            .input:focus{
+              outline: 0 0 0 0  !important;
+              box-shadow: 0 0 0 0 !important; 
+              }

@@ -1,0 +1,50 @@
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="https://cdn.pixabay.com/photo/2019/02/03/11/04/economy-3972328_1280.jpg"
+                            style="color: rgba(20, 19, 19, 0.767);" class="brand_logo w-10" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form #loginForm='ngForm' class="container" (ngSubmit)='loginInvestor(loginForm)' >
+                        <div class="card-header">
+                            <h3>Investor Login</h3>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="userName" id="userName" class="form-control input_user" value="userName" 
+                           #userName='ngModel' ngModel placeholder="username">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password" id="password" class="form-control input_pass" value="password"
+                              #password='ngModel' ngModel  placeholder="password">
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit" name="button" class="btn login_btn btn btn-lg btn-info">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+               
+                    <div >
+                        <div class="d-flex justify-content-center links">
+                        <a routerLink="/investor" style="color: navy;">create new account</a>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        <a href="#" style="color: navy;">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
